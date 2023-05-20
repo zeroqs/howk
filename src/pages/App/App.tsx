@@ -37,7 +37,7 @@ const App = () => {
     register,
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema),
   })
@@ -63,7 +63,6 @@ const App = () => {
               placeholder="Enter password"
             />
             <p>{errors?.password?.message}</p>
-
             <Input
               register={register}
               name="typing"
@@ -96,7 +95,7 @@ const App = () => {
               text="Cancel"
               type={EButton.inherit}
             />
-            <Button text="Next" type={EButton.full} />
+            <Button disabled={!isValid} text="Next" type={EButton.full} />
           </div>
         </form>
       </div>

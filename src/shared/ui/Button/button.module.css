@@ -18,3 +18,8 @@
     border-radius: 8px;
     color: #7A5CFA;
 }
+
+.disabled {
+    background-color: #4f3ca8;
+    cursor: not-allowed;
+}

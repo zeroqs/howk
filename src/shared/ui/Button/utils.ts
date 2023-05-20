@@ -7,4 +7,5 @@ export interface IButton {
   text: string
   type: EButton
   onClick?: (e: any) => void
+  disabled?: boolean
 }
