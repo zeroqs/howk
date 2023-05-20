@@ -1,0 +1,30 @@
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    color: #666666;
+    padding: 96px 98px;
+}
+
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.btnGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.otherGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

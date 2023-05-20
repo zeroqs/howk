@@ -1,0 +1,57 @@
+.input {
+    width: 100%;
+    color: var(--main-color);
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    padding: 16px;
+    background-color: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+
+}
+
+.inputBlock {
+    position: relative;
+}
+
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+.error {
+    color: var(--error);
+    border: 2px solid var(--error);
+}
+
+.error:focus {
+    border: 2px solid var(--error);
+}
+
+.errorSvg {
+    position: absolute;
+    margin-left: auto;
+    top: 16px;
+    padding-right: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.label {
+    padding-bottom: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.commentTip {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666666;
+}
