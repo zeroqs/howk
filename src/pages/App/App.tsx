@@ -21,7 +21,11 @@ type FormValues = {
 const schema = yup
   .object({
     user: yup.string().required(),
-    password: yup.string().required(),
+    password: yup
+      .string()
+      .required()
+      .min(8, 'Password is too short - should be 8 chars minimum.')
+      .max(14, 'Password is too long - should be 14 chars maximum.'),
     typing: yup.string().required(),
     options: yup.object().required(),
     radio: yup.string().required(),
@@ -37,7 +41,7 @@ const App = () => {
     register,
     control,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { isValid },
   } = useForm({
     resolver: yupResolver(schema),
   })
@@ -53,7 +57,6 @@ const App = () => {
               type={inputTypes.text}
               placeholder="Enter username"
             />
-            <p>{errors?.user?.message}</p>
             <Input
               register={register}
               name="password"
@@ -62,7 +65,6 @@ const App = () => {
               type={inputTypes.password}
               placeholder="Enter password"
             />
-            <p>{errors?.password?.message}</p>
             <Input
               register={register}
               name="typing"
@@ -70,13 +72,11 @@ const App = () => {
               type={inputTypes.text}
               placeholder="Typing"
             />
-            <p>{errors?.typing?.message}</p>
           </div>
           <div className={styles.otherGroup}>
             <CheckBox text="Remember me" />
             <Switch />
             <Radio register={register} name="radio" />
-            <p>{errors?.radio?.message}</p>
 
             <Controller
               name="options"
@@ -85,7 +85,6 @@ const App = () => {
                 <Select {...field} styles={customStyles} options={options} />
               )}
             />
-            <p>{errors?.iceCreamType?.message}</p>
           </div>
           <div className={styles.btnGroup}>
             <Button
